@@ -11,9 +11,15 @@ public class SpawnManager : MonoBehaviour
             float x = Random.Range(-10, 10);
             int index = Random.Range(0, dogPrefabs.Length);
             if (dogPrefabs[index] != null)
-            Instantiate(dogPrefabs[0]);
-              new Vector3(0, 0, 20);
-              Quaternion.Euler(0, 180, 0);
+            {
+                Instantiate(dogPrefabs[index]);
+                new Vector3(0, 0, 20);
+                Quaternion.Euler(0, 180, 0);
+            }
+            else
+            {
+                Debug.LogWarning($"dog prefabs {index} is null");
+            }
         }
         
     }
